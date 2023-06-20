@@ -1,0 +1,45 @@
+@keyframes ldio-6ot8j4up8wm {
+  0% { transform: translate(-50%,-50%) rotate(0deg); }
+  100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+@keyframes xad {
+  0% {
+    border-left-color: theme('colors.brand-orange');
+    border-right-color: white;
+  }
+  50% {
+    border-left-color: white;
+    border-right-color: #444;
+  }
+  100% {
+    border-left-color: theme('colors.brand-orange');
+    border-right-color: white;
+  }
+}
+
+.ldio div {
+  @apply absolute w-[25px] h-[25px];
+  position: absolute;
+  border: 3.5px solid #999;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+
+.ldio div {
+  @apply top-[32px] left-[32px];
+  animation: ldio-6ot8j4up8wm 1.25s linear infinite, xad 1.75s linear infinite;
+}
+
+.loadingioSpinnerRolling {
+  @apply w-[64px] h-[64px] inline-block overflow-hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50;
+}
+
+.ldio {
+  @apply w-full h-full relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.ldio div { box-sizing: content-box; }

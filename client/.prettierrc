@@ -1,0 +1,22 @@
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "quoteProps": "as-needed",
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/components/(.*)$",
+    "^@/firebase/(.*)$",
+    "^@/atoms/(.*)$",
+    "^../(.*)",
+    "^./(.*)",
+    "^.$",
+  ],
+  "importOrderSeperation": true,
+  "importOrderSortSpecifiers": true
+}
