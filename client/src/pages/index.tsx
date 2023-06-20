@@ -1,7 +1,7 @@
 import ProblemsTable from '@/components/ProblemsTable/ProblemsTable';
 import Topbar from '@/components/Topbar/Topbar';
 import useHasMounted from '@/hooks/useHasMounted';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { SiOpenai } from 'react-icons/si';
 import useBreakpoints from '@/hooks/useBreakpoints';
@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { useSetRecoilState } from 'recoil';
 import { authModalState } from '@/atoms/authModalAtom';
 import Footer from '@/components/Footer';
+import UtilService from '@/services/utilService';
 
 interface BylineProps {
   md: boolean;
@@ -38,6 +39,13 @@ const Home = () => {
   const [user] = useAuthState(auth);
   const hasMounted = useHasMounted();
   const { md } = useBreakpoints();
+  useEffect(() => {
+    if (hasMounted) {
+      (async () => {
+        await UtilService.ping();
+      })();
+    }
+  }, [hasMounted]);
   if (!hasMounted) return null;
   return (
     <main className=" bg-dark-layer-2 min-h-screen flex flex-col items-center">
